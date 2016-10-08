@@ -2,12 +2,12 @@ package com.example.dietapp;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -66,20 +66,30 @@ class CustomArrayAdapter extends ArrayAdapter {
         //holder.checked = (CheckBox) convertView.findViewById(R.id.cbCheckListItem);
         //holder.checked.setTag(position);
 
-        //define an onClickListener for the CheckBox.
+        //define an onClickListener for the check_button.
 
-        /*holder.checked.setOnClickListener(new OnClickListener()
+        holder.check_button1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                //assign check-box state to the corresponding object in list.
-                CheckBox checkbox = (CheckBox) v;
-                rowDataList.get(position).setChecked(checkbox.isChecked());
-                Toast.makeText(activity, "CheckBox from row " + position + " was checked", Toast.LENGTH_LONG).show();
+                //when button clicked change the current state of the button : if not pressed insert to menu and change icon
+                //else do the opposite
+                ImageButton check_button= (ImageButton)v.findViewById(R.id.check_button1);
+                RowData rd = list.get(position);
+                if(!rd.in_menu){
+                    rd.in_menu = true;
+                    check_button.setImageResource(R.mipmap.pressed_button);
+                }
+                else {
+                    rd.in_menu = false;
+                    check_button.setImageResource(R.mipmap.add_button);
+                }
             }
+
         });
-        */
+
+
 
         //setting data into the the ViewHolder.
         holder.foods.setText(list.get(position).foodname);

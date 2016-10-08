@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         rowDataList.add(new RowData());
         rowDataList.add(new RowData());
         rowDataList.add(new RowData());
+        rowDataList.add(new RowData());
+        rowDataList.add(new RowData());
+        rowDataList.add(new RowData());
+        rowDataList.add(new RowData());
+        rowDataList.add(new RowData());
+        rowDataList.add(new RowData());
         CustomArrayAdapter customArrayAdapter = new CustomArrayAdapter(this, R.id.foods, rowDataList);
         ListView dietlistview = (ListView) findViewById(R.id.dietlistview);
         dietlistview.setAdapter(customArrayAdapter);
