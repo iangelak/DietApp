@@ -39,6 +39,8 @@ class CustomArrayAdapter extends ArrayAdapter {
         LayoutInflater inflator = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         //inflating the row layout we defined earlier.
+
+
         if(convertView==null)
              convertView = inflator.inflate(R.layout.test_layout, parent,false);
         else
@@ -95,7 +97,10 @@ class CustomArrayAdapter extends ArrayAdapter {
         holder.foods.setText(list.get(position).foodname);
         holder.foodPoints.setText(String.valueOf(list.get(position).points));
         holder.check_button1.setBackgroundResource(0);
-        holder.check_button1.setImageResource(R.mipmap.add_button);
+        if(!list.get(position).in_menu)
+            holder.check_button1.setImageResource(R.mipmap.add_button);
+        else
+            holder.check_button1.setImageResource(R.mipmap.pressed_button);
         //holder.checked.setChecked(rowDataList.get(position).isChecked());
 
         //return the row view.
