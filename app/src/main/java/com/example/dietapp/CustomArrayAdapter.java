@@ -85,7 +85,7 @@ class CustomArrayAdapter extends ArrayAdapter {
         holder.foods.setText(list.get(position).foodname);
         holder.foodPoints.setText(String.valueOf(list.get(position).points));
         holder.check_button1.setBackgroundResource(0);
-        holder.check_button1.setImageResource(R.drawable.ic_check_circle_black_24dp);
+        holder.check_button1.setImageResource(R.mipmap.add_button);
         //holder.checked.setChecked(rowDataList.get(position).isChecked());
 
         //return the row view.
