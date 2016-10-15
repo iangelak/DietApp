@@ -51,6 +51,7 @@ class CustomArrayAdapter extends ArrayAdapter {
 
         holder.foods = (TextView) convertView.findViewById(R.id.foods);
         holder.foodPoints = (TextView) convertView.findViewById(R.id.foodPoints);
+        holder.calories = (TextView) convertView.findViewById(R.id.calories);
         holder.check_button1 = (ImageButton) convertView.findViewById(R.id.check_button1);
 
         //define an onClickListener for the ImageView.
@@ -79,12 +80,12 @@ class CustomArrayAdapter extends ArrayAdapter {
                 //else do the opposite
                 ImageButton check_button= (ImageButton)v.findViewById(R.id.check_button1);
                 RowData rd = list.get(position);
-                if(!rd.in_menu){
-                    rd.in_menu = true;
+                if(!rd.getIn_menu()){
+                    rd.setIn_menu(true);
                     check_button.setImageResource(R.mipmap.pressed_button);
                 }
                 else {
-                    rd.in_menu = false;
+                    rd.setIn_menu(false);
                     check_button.setImageResource(R.mipmap.add_button);
                 }
             }
@@ -94,10 +95,12 @@ class CustomArrayAdapter extends ArrayAdapter {
 
 
         //setting data into the the ViewHolder.
-        holder.foods.setText(list.get(position).foodname);
-        holder.foodPoints.setText(String.valueOf(list.get(position).points));
+        holder.foods.setText(list.get(position).getFoodname());
+        holder.foodPoints.setText(String.valueOf(list.get(position).getPoints()));
+        holder.calories.setText(String.valueOf(list.get(position).getCalories()));
         holder.check_button1.setBackgroundResource(0);
-        if(!list.get(position).in_menu)
+
+        if(!list.get(position).getIn_menu())
             holder.check_button1.setImageResource(R.mipmap.add_button);
         else
             holder.check_button1.setImageResource(R.mipmap.pressed_button);

@@ -24,6 +24,16 @@
         android:minHeight="?android:attr/listPreferredItemHeight"
         />
 
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center_vertical"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        />
+
     <ImageButton
         android:id="@+id/check_button1"
         android:layout_width="wrap_content"

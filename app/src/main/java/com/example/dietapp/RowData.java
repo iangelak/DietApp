@@ -6,15 +6,29 @@ package com.example.dietapp;
 
 public class RowData {
 
-    public boolean in_menu;
-    public String foodname;
-    public float points;
+    private boolean in_menu;
+    private String foodname;
+    private float points;
+    private float calories;
 
     public RowData()
     {
-        this.in_menu=false;
-        this.foodname = "A Food";
-        this.points = 10.0f;
+        setIn_menu(false);
+        setFoodname("A food");
+        setPoints(10.0f);
+        setCalories(100.0f);
     }
+
+    /*Setters*/
+    public void setIn_menu(boolean b) { this.in_menu = b; return; }
+    public void setFoodname(String s) { this.foodname = s; return; }
+    public void setPoints(float points) { this.points = points; return; }
+    public void setCalories(float calories) { this.calories = calories; return; }
+
+    /*Getters*/
+    public boolean getIn_menu() { return this.in_menu; }
+    public String getFoodname() { return this.foodname; }
+    public float getPoints() { return this.points; }
+    public float getCalories() { return this.calories; }
 
 }

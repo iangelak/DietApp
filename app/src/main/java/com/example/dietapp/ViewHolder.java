@@ -11,5 +11,6 @@ import android.widget.TextView;
 public class ViewHolder {
     TextView foods;
     TextView foodPoints;
+    TextView calories;
     ImageButton check_button1;
 }
